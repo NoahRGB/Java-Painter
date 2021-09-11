@@ -2,16 +2,13 @@ package graphics;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
 import main.Painter;
 
-import shapes.Shape;
-
 public class Frame extends JFrame{
-	
+
 	Panel mainPanel;
 	Painter painter;
 	LoopContext currentLoopContext;

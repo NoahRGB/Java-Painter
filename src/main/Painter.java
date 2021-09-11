@@ -4,9 +4,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 import javax.swing.Timer;
@@ -29,8 +27,13 @@ public abstract class Painter implements ActionListener{
 	Timer animationTimer;
 	Frame mainFrame;
 	int fps;
+
+	public int width;
+	public int height;
 	
 	public Painter(int width, int height, int fps) {
+		this.width = width;
+		this.height = height;
 		this.fps = fps;
 		mainFrame = new Frame(width, height, this);
 		animationTimer = new Timer(1000 / fps, this);
