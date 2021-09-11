@@ -1,5 +1,5 @@
 # Java-Painter
-Painter is a Java project I made that is inspired by P5js and Processing. These are libraries that simplify the act of pushing various graphical elements to the user's screen through  a variety of functions. Although my version is very limited compared to the originals, I learnt lots about java developing it and I plan to update it in the future to increase its usefulness.
+Painter is a Java project I made that is inspired by P5js and Processing. These are libraries that simplify the act of pushing various graphical elements to the user's screen and animating them through  a variety of functions. Although my version is very limited compared to the originals, I learnt lots about java developing it and I plan to update it in the future to increase its usefulness.
 
 # Small 'bouncy ball' demo
 ![Bouncy ball demo gif](https://media.giphy.com/media/aOYzsrk8cbRzP70JTe/giphy.gif?cid=790b7611cf023b2165573f475aee77a3ffd9a9899837170f&rid=giphy.gif&ct=g)
