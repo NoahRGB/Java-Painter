@@ -1,16 +1,9 @@
 package graphics;
 
-import java.awt.BasicStroke;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-
 import javax.swing.JPanel;
-import javax.swing.Timer;
-
 import shapes.Circle;
 import shapes.Rect;
 import shapes.Shape;
@@ -29,7 +22,7 @@ public class Panel extends JPanel {
 	public void paint(Graphics graphics) {
 		Graphics2D g = (Graphics2D) graphics;
 		g.setColor(currentLoopContext.backgroundColor);
-		g.fillRect(0, 0, 500, 500);
+		g.fillRect(0, 0, width, height);
 		for (Shape shape : currentLoopContext.shapesToDraw) {
 			g.setColor(shape.colour);
 			if (shape instanceof Circle) {

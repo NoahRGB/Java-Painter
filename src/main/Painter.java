@@ -56,12 +56,37 @@ public abstract class Painter implements ActionListener{
 		mainFrame.updateShapes(new LoopContext(shapesToDraw, keysDown, bgColor));
 	}
 	
+	public void fps(int newFps) {
+		this.fps = newFps;
+		animationTimer.stop();
+		animationTimer = new Timer(1000 / fps, this);
+		animationTimer.start();
+	}
+	
 	public void background(Color newBgColor) {
 		bgColor = newBgColor;
 	}
 	
+	public void background(int r, int g, int b, int a) {
+		Color newBgColor = new Color(r, g, b, a);
+		bgColor = newBgColor;
+	}
+	
+	public void background(int r, int g, int b) {
+		background(r, g, b, 255);
+	}
+	
 	public void colour(Color newColour) {
 		colour = newColour;
+	}
+	
+	public void colour(int r, int g, int b, int a) {
+		Color newColour = new Color(r, g, b, a);
+		colour = newColour;
+	}
+	
+	public void colour (int r, int g, int b) {
+		colour(r, g, b, 255);
 	}
 	
 	public void circle(int x, int y, int width, int height) {

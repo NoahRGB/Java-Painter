@@ -18,7 +18,7 @@ public class LoopContext {
 		this.backgroundColor = backgroundColor;
 	}
 	
-	//An alternative constructor for the inital paint where an empty loopContext is needed
+	//An alternative constructor for the initial paint where an empty loopContext is needed
 	public LoopContext() {
 		this.shapesToDraw = new ArrayList<Shape>();
 		this.keysDown = new HashSet<Integer>();
