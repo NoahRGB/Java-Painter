@@ -1,4 +1,4 @@
-package shapes;
+package elements;
 
 import java.awt.Color;
 
@@ -14,5 +14,12 @@ public abstract class Shape {
 		this.width = width;
 		this.height = height;
 		this.colour = colour;
+	}
+	
+	//some elements are more basic and don't require width, height, colour
+	public Shape (String name, int x, int y) {
+		this.name = name;
+		this.x = x;
+		this.y = y;
 	}
 }

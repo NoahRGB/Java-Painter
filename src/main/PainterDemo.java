@@ -48,6 +48,8 @@ public class PainterDemo extends Painter {
 			fps(5);
 		}
 		
+		text("Hello World!", 100, 100);
+		
 		colour(255, 255, 255);
 		circle(x2, y2, 50, 50);
 	}

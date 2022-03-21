@@ -9,16 +9,17 @@ import java.util.Set;
 
 import javax.swing.Timer;
 
+import elements.Circle;
+import elements.Rect;
+import elements.Shape;
+import elements.Text;
 import graphics.Frame;
 import graphics.LoopContext;
-import shapes.Circle;
-import shapes.Rect;
-import shapes.Shape;
 
 public abstract class Painter implements ActionListener{
 
 	//loop context variables
-	ArrayList<Shape> shapesToDraw = new ArrayList<Shape>();
+	ArrayList<ArrayList> toDraw = new ArrayList<ArrayList>();
 	Set<Integer> keysDown = new HashSet<Integer>();
 	Color bgColor;
 	Color colour;
@@ -38,6 +39,11 @@ public abstract class Painter implements ActionListener{
 		mainFrame = new Frame(width, height, this);
 		animationTimer = new Timer(1000 / fps, this);
 		animationTimer.start();
+		
+		//the first array of toDraw contains all the shapes,
+		//and the second array contains all the text elements
+		toDraw.add(new ArrayList<Shape>());
+		toDraw.add(new ArrayList<Text>());
 	}
 	
 	public boolean isKeyDown(int toCheckKeyCode) {
@@ -51,9 +57,10 @@ public abstract class Painter implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		shapesToDraw.clear();
+		toDraw.get(0).clear();
+		toDraw.get(1).clear();
 		animationLoop();
-		mainFrame.updateShapes(new LoopContext(shapesToDraw, keysDown, bgColor));
+		mainFrame.updateElements(new LoopContext(toDraw, keysDown, bgColor));
 	}
 	
 	public void fps(int newFps) {
@@ -89,12 +96,16 @@ public abstract class Painter implements ActionListener{
 		colour(r, g, b, 255);
 	}
 	
+	public void text(String str, int x, int y) {
+		toDraw.get(1).add(new Text(str, x, y));
+	}
+	
 	public void circle(int x, int y, int width, int height) {
-		shapesToDraw.add(new Circle(x, y, width, height, colour));
+		toDraw.get(0).add(new Circle(x, y, width, height, colour));
 	}
 	
 	public void rect(int x, int y, int width, int height) {
-		shapesToDraw.add(new Rect(x, y, width, height, colour));
+		toDraw.get(0).add(new Rect(x, y, width, height, colour));
 	}
 
 	abstract void animationLoop();

@@ -38,8 +38,8 @@ public class Frame extends JFrame{
 		});
 	}
 	
-	public void updateShapes(LoopContext newLoopContext) {
+	public void updateElements(LoopContext newLoopContext) {
 		currentLoopContext = newLoopContext;
-		mainPanel.updateShapes(newLoopContext);
+		mainPanel.updateElements(newLoopContext);
 	}
 }
